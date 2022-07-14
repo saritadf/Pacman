@@ -1,0 +1,36 @@
+﻿  Avatar.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.cpp(17,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.cpp(17,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  BigDot.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Cherry.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Dot.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  GameEntity.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Ghost.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(76,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(76,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MovableGameEntity.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(34,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(35,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Pacman.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(226,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(227,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Sprite.cpp
+  SpriteFont.cpp
+  StaticGameEntity.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  World.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(76,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(76,35): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(110,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(110,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Generating Code...
+  Pacman.vcxproj -> C:\Users\rusaf\Documents\Trabajos\Pacman\Debug\Pacman.exe

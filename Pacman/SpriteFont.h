@@ -6,6 +6,7 @@
 #include "SDL_image.h"
 #include "SDL_rect.h"
 #include "SDL_ttf.h"
+#include <string>
 
 struct SDL_Texture;
 class Drawer;

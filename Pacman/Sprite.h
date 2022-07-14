@@ -5,6 +5,7 @@
 #include <map>
 #include "SDL_image.h"
 #include "SDL_rect.h"
+#include <string>
 
 struct SDL_Texture;
 class Drawer;

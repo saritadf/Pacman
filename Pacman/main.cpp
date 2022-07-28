@@ -1,3 +1,7 @@
+#ifdef _DEBUG
+#define new MYDEBUG_NEW
+#endif
+
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"
@@ -5,9 +9,13 @@
 #include "pacman.h"
 #include "drawer.h"
 #include <iostream>
+#include <stdlib.h>  
+#include <crtdbg.h>  
 
 int main(int argc, char **argv)
 {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	
 	/* initialize SDL */
 	if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 	{
@@ -54,6 +62,18 @@ int main(int argc, char **argv)
 
 		SDL_RenderPresent(renderer);
 		SDL_Delay(1);
+
+		bool quit = false;
+		//if (event.type == SDL_SCANCODE_1 1|| event.type == SDL_SCANCODE_ESCAPE || event.key.keysym.sym == SDLK_ESCAPE) {
+		if (event.type == SDL_KEYDOWN)
+		{
+			if (event.key.keysym.scancode == SDL_SCANCODE_1)
+			{
+				quit = true;
+			}
+		}
+		if (quit)
+			break;
 	}
 
 	delete pacman;
@@ -62,6 +82,9 @@ int main(int argc, char **argv)
 	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit( );
+	
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+	_CrtDumpMemoryLeaks();
 
 	return 0;
 }

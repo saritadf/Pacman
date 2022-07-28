@@ -1,39 +1,68 @@
 ﻿  Avatar.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-Avatar.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   BigDot.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Cherry.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Dot.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Drawer.cpp
   GameEntity.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Ghost.cpp
-Ghost.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   main.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   MovableGameEntity.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-MovableGameEntity.cpp(6): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-MovableGameEntity.cpp(7): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(38,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(39,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Pacman.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-Pacman.cpp(132): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-Pacman.cpp(133): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   PathmapTile.cpp
+  Sprite.cpp
+  SpriteFont.cpp
   StaticGameEntity.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Vector2f.cpp
-d:\projects\pacman\pacman\Vector2f.h(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   World.cpp
-World.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-World.cpp(65): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-World.cpp(92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-World.cpp(92): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  Generating code
-  All 589 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  Pacman.vcxproj -> D:\Projects\Pacman\Release\Pacman.exe
-  Pacman.vcxproj -> D:\Projects\Pacman\Release\Pacman.pdb (Full PDB)
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(26,51): warning C4150: deletion of pointer to incomplete type 'Cherry'; no destructor called
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.h(21): message : see declaration of 'Cherry'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(119,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(119,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
+Ghost.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
+Pacman.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
+World.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
+C:\Users\rusaf\Documents\Trabajos\Pacman\Release\Pacman.exe : fatal error LNK1169: one or more multiply defined symbols found

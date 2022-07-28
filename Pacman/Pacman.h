@@ -3,6 +3,11 @@
 
 #include "Vector2f.h"
 #include <list>
+#include "SDL_image.h"
+#include "Constants.h"
+
+using namespace constants;
+using namespace std;
 
 struct SDL_Surface;
 class Drawer;
@@ -21,6 +26,16 @@ public:
 	bool Draw();
 
 private:
+	// Tunel Tiles
+	const int RIGHT_TUNEL_TILEX = 25;
+	const int LEFT_TUNEL_TILEX = 0;
+
+	// Font
+	const char* FONT_PATH_FREE_MONO = "freefont-ttf\\sfd\\FreeMono.ttf";
+	const int FONT_SIZE = 24;
+	const SDL_Color WHITE = { 255,255,255,255 };
+	const SDL_Color GREEN = { 0,255,0,255 };
+
 	Pacman(Drawer* aDrawer);
 	bool Init();
 	bool UpdateInput();
@@ -41,9 +56,10 @@ private:
 	int myFps;
 
 	Vector2f myNextMovement;
+	Vector2f myPriorPosition;
 
 	Avatar* myAvatar;
-	std::list<Ghost*> ghosts;
+	list<Ghost*> ghosts;
 	World* myWorld;
 
 	SpriteFont* gameplayMessage;

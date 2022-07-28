@@ -35,11 +35,13 @@ bool Drawer::Init()
 	return true;
 }
 
-SDL_Texture* Drawer::GetTextureResource(std::string assetPath)
+SDL_Texture* Drawer::GetTextureResource(string assetPath)
 {
 	SDL_Texture* texture = NULL;
+	SDL_Texture* spriteSheetTexture = NULL;
+	SDL_Surface* surface = NULL;
 
-	std::map<std::string, SDL_Texture*>::iterator textureFinder = textures.find(assetPath);
+	map<string, SDL_Texture*>::iterator textureFinder = textures.find(assetPath);
 	if(textureFinder != textures.end())
 		texture = textureFinder->second;
 	else
@@ -56,11 +58,11 @@ SDL_Texture* Drawer::GetTextureResource(SDL_Surface* surface)
 	return SDL_CreateTextureFromSurface(myRenderer, surface);
 }
 
-TTF_Font* Drawer::GetFontResource(std::string assetPath, int size)
+TTF_Font* Drawer::GetFontResource(string assetPath, int size)
 {
 	TTF_Font* font = NULL;
 
-	std::map<std::string, TTF_Font*>::iterator fontFinder = fonts.find(assetPath);
+	map<string, TTF_Font*>::iterator fontFinder = fonts.find(assetPath);
 	if (fontFinder != fonts.end())
 		font = fontFinder->second;
 	else
@@ -80,7 +82,7 @@ void Drawer::Draw(SDL_Texture* texture, SDL_Rect frame, int aCellX = 0, int aCel
 	posRect.w = frame.w;
 	posRect.h = frame.h;
 
-	SDL_RenderCopy(myRenderer, texture, &frame, &posRect);	
+	SDL_RenderCopy(myRenderer, texture, &frame, &posRect);
 }
 
 void Drawer::DrawText(const char* aText, const char* aFontFile, int aX, int aY)

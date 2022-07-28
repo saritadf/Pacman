@@ -117,6 +117,9 @@
     <ClInclude Include="SpriteFont.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\map" />

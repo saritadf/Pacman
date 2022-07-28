@@ -1,3 +1,7 @@
+#ifdef _DEBUG
+#define new MYDEBUG_NEW
+#endif
+
 #include "GameEntity.h"
 #include "Drawer.h"
 

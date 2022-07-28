@@ -1,3 +1,7 @@
+#ifdef _DEBUG
+#define new MYDEBUG_NEW
+#endif
+
 #include "StaticGameEntity.h"
 
 StaticGameEntity::StaticGameEntity(Vector2f aPosition, Sprite* entitySprite)

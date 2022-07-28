@@ -4,14 +4,14 @@
 #include "SDL_rect.h"
 #include "SDL.h"
 
-SpriteFont* SpriteFont::Create(std::string assetPath, std::string initialText, SDL_Color initialColor, int size, Drawer* drawer)
+SpriteFont* SpriteFont::Create(string assetPath, string initialText, SDL_Color initialColor, int size, Drawer* drawer)
 {
 	TTF_Font* font = drawer->GetFontResource(assetPath, size);
 	SpriteFont* newFont = new SpriteFont(font, initialText, initialColor, drawer);
 	return newFont;
 }
 
-SpriteFont::SpriteFont(TTF_Font* font, std::string initialText, SDL_Color initialColor, Drawer* drawer)
+SpriteFont::SpriteFont(TTF_Font* font, string initialText, SDL_Color initialColor, Drawer* drawer)
 	: fontResource(font),
 	text(initialText),
 	fontColor(initialColor),
@@ -26,7 +26,7 @@ SpriteFont::~SpriteFont(void)
 	TTF_CloseFont(fontResource);
 }
 
-void SpriteFont::SetText(std::string newTextString)
+void SpriteFont::SetText(string newTextString)
 {
 	text = newTextString;
 	PrintToTexture();
@@ -57,4 +57,7 @@ void SpriteFont::PrintToTexture()
 void SpriteFont::Draw(Drawer* drawer, int posX, int posY)
 {
 	drawer->Draw(printedText, frame, posX, posY);
+
+	if(posX == FPS_POSX && posY == FPS_POSY)
+		SDL_DestroyTexture(printedText);
 }

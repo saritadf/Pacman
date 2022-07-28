@@ -1,13 +1,17 @@
+#ifdef _DEBUG
+#define new MYDEBUG_NEW
+#endif
+
 #include "Sprite.h"
 #include "Drawer.h"
 #include "SDL_image.h"
 #include "SDL_rect.h"
 #include "SDL.h"
 
-Sprite* Sprite::Create(std::list<std::string> assetPaths, Drawer* drawer, int sizeX, int sizeY)
+Sprite* Sprite::Create(list<string> assetPaths, Drawer* drawer, int sizeX, int sizeY)
 {
-	std::map<std::string, SDL_Texture*> frameCollection;
-	std::list<std::string>::iterator it;
+	map<string, SDL_Texture*> frameCollection;
+	list<string>::iterator it;
 
 	for(it = assetPaths.begin(); it != assetPaths.end(); it++)
 	{
@@ -25,13 +29,13 @@ Sprite* Sprite::Create(std::list<std::string> assetPaths, Drawer* drawer, int si
 	return newSprite;
 }
 
-void Sprite::SetFrame(std::string frameKey)
+void Sprite::SetFrame(string frameKey)
 {
 	if(textures[frameKey] != NULL)
 		currentFrame = frameKey;
 }
 
-Sprite::Sprite(std::map<std::string, SDL_Texture*> frameCollection, SDL_Rect sizeRect)
+Sprite::Sprite(map<string, SDL_Texture*> frameCollection, SDL_Rect sizeRect)
 	: frame(sizeRect)
 {
 	textures.insert(frameCollection.begin(), frameCollection.end());
@@ -40,4 +44,14 @@ Sprite::Sprite(std::map<std::string, SDL_Texture*> frameCollection, SDL_Rect siz
 void Sprite::Draw(Drawer* drawer, int posX, int posY)
 {
 	drawer->Draw(textures[currentFrame], frame, posX, posY);
+}
+
+string Sprite::GetFrame()
+{
+		return currentFrame;
+}
+
+map<string, SDL_Texture*> Sprite::GetTextures()
+{
+	return textures;
 }

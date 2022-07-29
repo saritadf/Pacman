@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <random>
 
 #include "PathmapTile.h"
 #include "Dot.h"
@@ -195,7 +196,6 @@ bool World::HasIntersectedDot(const Vector2f& aPosition)
 	return false;
 }
 
-//SCORE FIND IT
 bool World::HasIntersectedBigDot(const Vector2f& aPosition)
 {
 	for (list<BigDot*>::iterator list_iter = myBigDots.begin(); list_iter != myBigDots.end(); list_iter++)
@@ -245,11 +245,10 @@ bool World::ListDoesNotContain(PathmapTile* aFromTile, list<PathmapTile*>& aList
 	return true;
 }
 
-//USE IT FOR THE GHOSTS
 void World::GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile*>& aList, int priorX, int priorY, GhostBehavior ghostBehavior, GhostType ghostType)
 {
-	PathmapTile* fromTile = GetTile(aFromX, aFromY);
 	PathmapTile* toTile = GetTile(aToX, aToY);
+	PathmapTile* fromTile = GetTile(aFromX, aFromY);
 	PathmapTile* priorTile = GetTile(priorX, priorY);
 
 	for (list<PathmapTile*>::iterator list_iter = myPathmapTiles.begin(); list_iter != myPathmapTiles.end(); list_iter++)
@@ -292,7 +291,7 @@ float distanceBtwTiles(const PathmapTile* fromTile, const PathmapTile* toTile)
 bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList, PathmapTile* priorTile, GhostBehavior ghostBehavior, GhostType ghostType)
 {
 	vector <PathmapTile*> directionTiles;
-	
+
 	if (aFromTile->myIsTunnelFlag && !priorTile->myIsTunnelFlag)
 	{
 		PathmapTile* tile;
@@ -318,17 +317,27 @@ bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapT
 
 	vector <PathmapTile*> neighbors;
 
-	for (int i=0; i < directionTiles.size(); i++)
+	for (int i = 0; i < directionTiles.size(); i++)
 	{
 		PathmapTile* tile = directionTiles[i];
 
-		if (isAValidPosition(aFromTile,tile, priorTile, ghostBehavior))
+		if (isAValidPosition(aFromTile, tile, priorTile, ghostBehavior))
 			neighbors.push_back(tile);
 	}
 
-	stable_sort(neighbors.begin(), neighbors.end(), [&](const PathmapTile* lhs, const PathmapTile* rhs){
-		return distanceBtwTiles(lhs, aToTile) < distanceBtwTiles(rhs, aToTile);
-		});
+	if (ghostBehavior == Vulnerable)
+	{
+		random_device rd;
+		default_random_engine generator(rd());
+
+		shuffle(begin(neighbors), end(neighbors), rd);
+	}
+	else
+	{
+		stable_sort(neighbors.begin(), neighbors.end(), [&](const PathmapTile* lhs, const PathmapTile* rhs) {
+			return distanceBtwTiles(lhs, aToTile) < distanceBtwTiles(rhs, aToTile);
+			});
+	}
 
 	aList.push_back(neighbors.at(0));
 

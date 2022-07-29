@@ -14,6 +14,11 @@ Avatar::~Avatar(void)
 {
 }
 
+void Avatar::Initialize()
+{
+	sprite->SetFrame(ASSET_PATH_LEFT_AVATAR);
+}
+
 void Avatar::Update(float aTime)
 {
 	SDL_Texture* texture = NULL;

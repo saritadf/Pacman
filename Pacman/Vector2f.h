@@ -69,7 +69,7 @@ public:
 
 	float Vector2f::Length() const
 	{
-		return sqrt(myX*myX + myY*myY);
+		return float(sqrt(myX*myX + myY*myY));
 	}
 
 	void Vector2f::Normalize()

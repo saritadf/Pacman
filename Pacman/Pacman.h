@@ -3,6 +3,7 @@
 
 #include "Vector2f.h"
 #include <list>
+#include <vector>
 #include "SDL_image.h"
 #include "Constants.h"
 
@@ -44,12 +45,22 @@ private:
 
 	Drawer* myDrawer;
 
+	float myInitTime;
 	float myTimeToNextUpdate;
 	float myGhostGhostCounter;
 
 	int myLives;
 	int myScore;
 	int myFps;
+	int mySaveTimer;
+	Vector2f redGhostPos;
+
+	const float SCATTER_TIME = 7.f;
+	const float TIMER_FOR_SCATTER_CHASE = 27.f;
+	const float WAIT_INIT_TIME = 3.f;
+
+	vector<int> ghostsPosX{ RED_GHOST_POSX, PINK_GHOST_POSX, CYAN_GHOST_POSX, ORANGE_GHOST_POSX };
+	vector<int> ghostsPosY{ RED_GHOST_POSY, PINK_GHOST_POSY, CYAN_GHOST_POSY, ORANGE_GHOST_POSY };
 
 	Vector2f myNextMovement;
 	Vector2f myPriorPosition;

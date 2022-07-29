@@ -27,6 +27,7 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 Pacman::Pacman(Drawer* aDrawer)
 : myDrawer(aDrawer)
 , myTimeToNextUpdate(0.f)
+, myInitTime(3.f)
 , myNextMovement(-1.f,0.f)
 , myScore(0)
 , myFps(0)
@@ -63,21 +64,21 @@ Pacman::Pacman(Drawer* aDrawer)
 	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
 	ghosts.push_back(new Ghost(Vector2f(PINK_GHOST_POSX * TILE_SIZE, PINK_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Pink));
 
-	//// Cyan Ghost - Inky
-	//assetPaths.clear();
-	//assetPaths.push_back(ASSET_PATH_CYAN_GHOST);
-	//assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
-	//assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
-	//newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	//ghosts.push_back(new Ghost(Vector2f(CYAN_GHOST_POSX * TILE_SIZE, CYAN_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase, GhostType::Cyan));
+	// Cyan Ghost - Inky
+	assetPaths.clear();
+	assetPaths.push_back(ASSET_PATH_CYAN_GHOST);
+	assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
+	assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
+	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
+	ghosts.push_back(new Ghost(Vector2f(CYAN_GHOST_POSX * TILE_SIZE, CYAN_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Cyan));
 
-	//// Orange Ghost - Clyde
-	//assetPaths.clear();
-	//assetPaths.push_back(ASSET_PATH_ORANGE_GHOST);
-	//assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
-	//assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
-	//newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	//ghosts.push_back(new Ghost(Vector2f(ORANGE_GHOST_POSX * TILE_SIZE, ORANGE_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase, GhostType::Orange));
+	// Orange Ghost - Clyde
+	assetPaths.clear();
+	assetPaths.push_back(ASSET_PATH_ORANGE_GHOST);
+	assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
+	assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
+	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
+	ghosts.push_back(new Ghost(Vector2f(ORANGE_GHOST_POSX * TILE_SIZE, ORANGE_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Orange));
 
 
 	myWorld = new World();
@@ -108,13 +109,13 @@ Pacman::~Pacman(void)
 	delete myWorld;
 	myWorld = NULL;
 
-	while (!ghosts.empty()) delete ghosts.front(), ghosts.pop_front();
-
 	delete myDrawer;
 	myDrawer = NULL;
 
 	delete myAvatar;
 	myAvatar = NULL;
+
+	while (!ghosts.empty()) delete ghosts.front(), ghosts.pop_front();
 }
 
 bool Pacman::Init()
@@ -126,93 +127,165 @@ bool Pacman::Init()
 
 bool Pacman::Update(float aTime)
 {
-	if (!UpdateInput())
-		return false;
+	myInitTime -= aTime;
+	//myTimeToNextUpdate -= aTime;
 
-	if (CheckEndGameCondition())
-		return true;
-	else if (myLives <= 0)
-		return true;
-
-	list<Ghost*>::iterator ghostIterator;
-
-	MoveAvatar();
-	myAvatar->Update(aTime);
-	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
-		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
-
-	if (myWorld->HasIntersectedDot(myAvatar->GetPosition()))
+	// Waiting to Initialize
+	if (myInitTime < 0.f)
 	{
-		UpdateScore(10);
-		if(CheckEndGameCondition())
-			gameplayMessage->SetText("You win!");
-	}
+		if (!UpdateInput())
+			return false;
 
-	myGhostGhostCounter -= aTime;
+		if (CheckEndGameCondition())
+			return true;
+		else if (myLives <= 0)
+			return true;
 
-	if (myWorld->HasIntersectedBigDot(myAvatar->GetPosition()))
-	{
-		UpdateScore(20);
+		list<Ghost*>::iterator ghostIterator;
 
-		myGhostGhostCounter = 20.f;
+		MoveAvatar();
+		myAvatar->Update(aTime);
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 		{
-			(*ghostIterator)->myIsClaimableFlag = true;
+			//if (myTimeToNextUpdate > 0)
+			//{
+			//	if (myTimeToNextUpdate (*ghostIterator)->GetGhostType() == Red)
+			//	{
+			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+
+			//	}
+			//	else if ((*ghostIterator)->GetGhostType() == Pink)
+			//	{
+			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+			//	}
+			//	else if ((*ghostIterator)->GetGhostType() == Orange)
+			//	{
+			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+			//	}
+			//	else if ((*ghostIterator)->GetGhostType() == Cyan)
+			//	{
+			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+			//	}
+			//}
+			//else
+			//{
+				if ((*ghostIterator)->GetGhostType() == Red)
+				{
+					redGhostPos = (*ghostIterator)->GetPosition();
+				}
+				else if ((*ghostIterator)->GetGhostType() == Cyan)
+				{
+					(*ghostIterator)->SetRedGhostPosition(redGhostPos);
+				}
+
+				(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+			//}
 		}
-	}
 
-	if (myWorld->HasIntersectedCherry(myAvatar->GetPosition()))
-	{
-		//UpdateScore(100);
-	}
+		if (myWorld->HasIntersectedDot(myAvatar->GetPosition()))
+		{
+			UpdateScore(10);
+			if (CheckEndGameCondition())
+				gameplayMessage->SetText("You win!");
+		}
 
-	if (myGhostGhostCounter <= 0.f)
-	{
+		myGhostGhostCounter -= aTime;
+
+		if (myWorld->HasIntersectedBigDot(myAvatar->GetPosition()))
+		{
+			UpdateScore(20);
+
+			mySaveTimer = myTimeToNextUpdate;
+
+			myGhostGhostCounter = 20.f;
+			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+			{
+				(*ghostIterator)->myIsVulnerableFlag = true;
+			}
+		}
+
+		if (myWorld->HasIntersectedCherry(myAvatar->GetPosition()))
+		{
+			//UpdateScore(100);
+		}
+
+		// Vulnerable Mode is over
+		if (myGhostGhostCounter <= 0.f)
+		{
+			myTimeToNextUpdate = mySaveTimer;
+			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+			{
+				(*ghostIterator)->myIsVulnerableFlag = false;
+				(*ghostIterator)->myIsChaseMode = true;
+			}
+		}
+
+		myTimeToNextUpdate -= aTime;
+
+		//// Chase Mode 
+		//if (myTimeToNextUpdate <= 0.f)
+		//{
+		//	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+		//	{
+		//		(*ghostIterator)->myIsScatterMode = false;
+		//		(*ghostIterator)->myIsChaseMode = true;
+		//	}
+		//	myTimeToNextUpdate = TIMER_FOR_SCATTER_CHASE;
+		//}
+		////Scatter Mode
+		//if (myTimeToNextUpdate > 0 && myTimeToNextUpdate <= 20.f)
+		//{
+		//	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+		//	{
+		//		(*ghostIterator)->myIsScatterMode = true;
+		//		(*ghostIterator)->myIsChaseMode = false;
+		//	}
+		//}
+
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 		{
-			(*ghostIterator)->myIsClaimableFlag = false;
-			(*ghostIterator)->myIsChaseMode = true;
-		}
-	}
-
-	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
-	{
-		// Ghost and Avatar Intersection
-		if (((*ghostIterator)->GetPosition() - myAvatar->GetPosition()).Length() < 16.f)
-		{
-			// Timer is up
-			if (myGhostGhostCounter <= 0.f)
+			// Ghost and Avatar Intersection
+			if (((*ghostIterator)->GetPosition() - myAvatar->GetPosition()).Length() < 16.f)
 			{
-				UpdateLives(myLives -1);
+				// Vulnerable timer is up
+				if (myGhostGhostCounter <= 0.f)
+				{
+					UpdateLives(myLives - 1);
 
-				// Died
-				if (myLives > 0)
-				{
-					myAvatar->Respawn(Vector2f(INIT_AVATAR_POSX * TILE_SIZE, INIT_AVATAR_POSY * TILE_SIZE));
-					(*ghostIterator)->Respawn(Vector2f(PINK_GHOST_POSX * TILE_SIZE, PINK_GHOST_POSY * TILE_SIZE));
-					break;
+					// Lose one life
+					if (myLives > 0)
+					{
+						myInitTime = WAIT_INIT_TIME;
+						myAvatar->Respawn(Vector2f(INIT_AVATAR_POSX * TILE_SIZE, INIT_AVATAR_POSY * TILE_SIZE));
+						myAvatar->Initialize();
+						int i = 0;
+						for (list<Ghost*>::iterator ghostIt = ghosts.begin(); ghostIt != ghosts.end(); ghostIt++)
+						{
+							(*ghostIt)->Respawn(Vector2f(ghostsPosX[i] * TILE_SIZE, ghostsPosY[i] * TILE_SIZE));
+							i++;
+						}
+						break;
+					}
+					// Lost
+					else
+					{
+						gameplayMessage->SetText("You lose!");
+						break;
+					}
 				}
-				// Lost
-				else
+				// Still Time
+				// If ghosts are vulnerable and not dead yet
+				else if ((*ghostIterator)->myIsVulnerableFlag && !(*ghostIterator)->myIsDeadFlag)
 				{
-					gameplayMessage->SetText("You lose!");
-					break;
+					(*ghostIterator)->myIsVulnerableFlag = false;
+					UpdateScore(50);
+					(*ghostIterator)->myIsDeadFlag = true;
 				}
 			}
-			// Still Time
-			// If ghosts are vulnerable and not dead yet
-			else if ((*ghostIterator)->myIsClaimableFlag && !(*ghostIterator)->myIsDeadFlag)
-			{
-				(*ghostIterator)->myIsClaimableFlag = false;
-				UpdateScore(50);
-				(*ghostIterator)->myIsDeadFlag = true;
-				//(*ghostIterator)->Die(myWorld);
-			}
 		}
 	}
-	
-	if (aTime > 0)
-		SetFPS((int) (1 / aTime));
+		if (aTime > 0)
+			SetFPS((int)(1 / aTime));
 
 	return true;
 }

@@ -27,19 +27,20 @@ public:
 	~Ghost(void);
 
 	void Update(float aTime, World* aWorld, Avatar* avatar);
+	void SetRedGhostPosition(Vector2f posX);
 
-	bool myIsClaimableFlag;
+	bool myIsVulnerableFlag;
 	bool myIsDeadFlag;
 	bool myIsChaseMode;
 	bool myIsScatterMode;
+	Vector2f redGhostPos;
 
 	void SetImage(string anImage);
-
-	void Die(World* aWorld);
+	GhostType GetGhostType();
 
 protected:
-	void BehaveWander();
-	void BehaveChase(World* aWorld, int targetX, int targetY, GhostType ghostType);
+	void BehaveWander(World* aWorld, Avatar* avatar, GhostType ghostType);
+	void BehaveChase(World* aWorld, Avatar* avatar, GhostType ghostType);
 	void BehaveIntercept(World* aWorld, int targetX, int targetY, GhostType ghostType);
 	void BehaveFear(World* aWorld, int targetX, int targetY, GhostType ghostType);
 	void BehaveVulnerable(World* aWorld, GhostType ghostType);

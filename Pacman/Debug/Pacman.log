@@ -1,5 +1,8 @@
 ﻿  Ghost.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(78,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(80,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(108,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(110,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(293,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(295,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(298,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(300,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
   Pacman.vcxproj -> C:\Users\rusaf\Documents\Trabajos\Pacman\Debug\Pacman.exe

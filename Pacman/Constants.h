@@ -7,9 +7,10 @@ namespace constants
 	{
 		Wander,
 		Chase,
-		Died,
 		Intercept,
 		Fear,
+		Vulnerable,
+		Scatter
 	};
 
 	enum GhostType
@@ -56,21 +57,21 @@ namespace constants
 	// Tile Size
 	inline constexpr const int TILE_SIZE = 22;
 
-		// Initial Positions
+	// Initial Positions
 	const int INIT_AVATAR_POSX = 13;
 	const int INIT_AVATAR_POSY = 22;
 
 	const int RED_GHOST_POSX = 12;
 	const int RED_GHOST_POSY = 10;
 
-	const int ORANGE_GHOST_POSX = 14;
-	const int ORANGE_GHOST_POSY = 13;
-
 	const int PINK_GHOST_POSX = 12;
 	const int PINK_GHOST_POSY = 13;
 
-	const int CYAN_GHOST_POSX = 11;
+	const int CYAN_GHOST_POSX = 10;
 	const int CYAN_GHOST_POSY = 13;
+
+	const int ORANGE_GHOST_POSX = 14;
+	const int ORANGE_GHOST_POSY = 13;
 
 	// Display positions
 	const int FPS_POSX = 880;

@@ -43,6 +43,7 @@ public:
 
 	void Update();
 
+	PathmapTile* GetTile(int aFromX, int aFromY);
 	void GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile*>& aList, int priorX, int priorY, GhostBehavior behavior, GhostType ghostType);
 
 private:
@@ -55,7 +56,6 @@ private:
 		DOWN
 	};
 
-	PathmapTile* GetTile(int aFromX, int aFromY);
 	bool Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList, PathmapTile* priorTile, GhostBehavior ghostBehavior, GhostType ghostType);
 	bool ListDoesNotContain(PathmapTile* aFromTile,list<PathmapTile*>& aList);
 

@@ -24,6 +24,7 @@ public:
 	Avatar(const Vector2f& aPosition, Sprite* entitySprite);
 	~Avatar(void);
 
+	void Initialize();
 	void Update(float aTime);
 };
 

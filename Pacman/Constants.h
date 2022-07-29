@@ -3,6 +3,24 @@
 
 namespace constants
 {
+	enum GhostBehavior
+	{
+		Wander,
+		Chase,
+		Died,
+		Intercept,
+		Fear,
+	};
+
+	enum GhostType
+	{
+		Red,
+		Orange,
+		Pink,
+		Cyan,
+		All
+	};
+
 	//Avatar Paths
 	inline constexpr const char* ASSET_PATH_RIGHT_AVATAR = "open_right_32.png";
 	inline constexpr const char* ASSET_PATH_DOWN_AVATAR = "open_down_32.png";
@@ -39,20 +57,20 @@ namespace constants
 	inline constexpr const int TILE_SIZE = 22;
 
 		// Initial Positions
-	const float INIT_AVATAR_POSX = 13.f;
-	const float INIT_AVATAR_POSY = 22.f;
+	const int INIT_AVATAR_POSX = 13;
+	const int INIT_AVATAR_POSY = 22;
 
-	const float RED_GHOST_POSX = 12.3f;
-	const float RED_GHOST_POSY = 10.5;
+	const int RED_GHOST_POSX = 12;
+	const int RED_GHOST_POSY = 10;
 
-	const float ORANGE_GHOST_POSX = 14.3f;
-	const float ORANGE_GHOST_POSY = 13;
+	const int ORANGE_GHOST_POSX = 14;
+	const int ORANGE_GHOST_POSY = 13;
 
-	const float PINK_GHOST_POSX = 12.7f;
-	const float PINK_GHOST_POSY = 13.f;
+	const int PINK_GHOST_POSX = 12;
+	const int PINK_GHOST_POSY = 13;
 
-	const float CYAN_GHOST_POSX = 11.3f;
-	const float CYAN_GHOST_POSY = 13.f;
+	const int CYAN_GHOST_POSX = 11;
+	const int CYAN_GHOST_POSY = 13;
 
 	// Display positions
 	const int FPS_POSX = 880;
@@ -63,5 +81,20 @@ namespace constants
 
 	const int LIVES_POSX = 20;
 	const int LIVES_POSY = 8;
+
+	// Tunnel Tiles
+	const int RIGHT_TUNNEL_TILEX = 25;
+	const int LEFT_TUNNEL_TILEX = 0;
+
+	//Ghosts Initial Box
+	const int MIN_RANGE_TILEX = 10;
+	const int MAX_RANGE_TILEX = 15;
+
+	const int MIN_RANGE_TILEY = 11;
+	const int MAX_RANGE_TILEY = 14;
+
+	// Out of the box tile
+	const int OUTSIDE_BOX_POSX = 13;
+	const int OUTSIDE_BOX_POSY = 10;
 }
 #endif

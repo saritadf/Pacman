@@ -53,15 +53,15 @@ Pacman::Pacman(Drawer* aDrawer)
 	assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
 	assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
 	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	ghosts.push_back(new Ghost(Vector2f(RED_GHOST_POSX * TILE_SIZE, RED_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase));
+	ghosts.push_back(new Ghost(Vector2f(RED_GHOST_POSX * TILE_SIZE, RED_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Red));
 	
-	//// Pink Ghost - Pinky
-	//assetPaths.clear();
-	//assetPaths.push_back(ASSET_PATH_PINK_GHOST);
-	//assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
-	//assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
-	//newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	//ghosts.push_back(new Ghost(Vector2f(PINK_GHOST_POSX * TILE_SIZE, PINK_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase));
+	// Pink Ghost - Pinky
+	assetPaths.clear();
+	assetPaths.push_back(ASSET_PATH_PINK_GHOST);
+	assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
+	assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
+	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
+	ghosts.push_back(new Ghost(Vector2f(PINK_GHOST_POSX * TILE_SIZE, PINK_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Pink));
 
 	//// Cyan Ghost - Inky
 	//assetPaths.clear();
@@ -69,7 +69,7 @@ Pacman::Pacman(Drawer* aDrawer)
 	//assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
 	//assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
 	//newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	//ghosts.push_back(new Ghost(Vector2f(CYAN_GHOST_POSX * TILE_SIZE, CYAN_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase));
+	//ghosts.push_back(new Ghost(Vector2f(CYAN_GHOST_POSX * TILE_SIZE, CYAN_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase, GhostType::Cyan));
 
 	//// Orange Ghost - Clyde
 	//assetPaths.clear();
@@ -77,7 +77,7 @@ Pacman::Pacman(Drawer* aDrawer)
 	//assetPaths.push_back(ASSET_PATH_GHOST_VULNERABLE);
 	//assetPaths.push_back(ASSET_PATH_GHOST_DEAD);
 	//newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
-	//ghosts.push_back(new Ghost(Vector2f(ORANGE_GHOST_POSX * TILE_SIZE, ORANGE_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase));;
+	//ghosts.push_back(new Ghost(Vector2f(ORANGE_GHOST_POSX * TILE_SIZE, ORANGE_GHOST_POSY * TILE_SIZE), newSprite, Ghost::GhostBehavior::Chase, GhostType::Orange));
 
 
 	myWorld = new World();
@@ -169,34 +169,44 @@ bool Pacman::Update(float aTime)
 	if (myGhostGhostCounter <= 0.f)
 	{
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+		{
 			(*ghostIterator)->myIsClaimableFlag = false;
+			(*ghostIterator)->myIsChaseMode = true;
+		}
 	}
 
 	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 	{
+		// Ghost and Avatar Intersection
 		if (((*ghostIterator)->GetPosition() - myAvatar->GetPosition()).Length() < 16.f)
 		{
+			// Timer is up
 			if (myGhostGhostCounter <= 0.f)
 			{
 				UpdateLives(myLives -1);
 
+				// Died
 				if (myLives > 0)
 				{
 					myAvatar->Respawn(Vector2f(INIT_AVATAR_POSX * TILE_SIZE, INIT_AVATAR_POSY * TILE_SIZE));
 					(*ghostIterator)->Respawn(Vector2f(PINK_GHOST_POSX * TILE_SIZE, PINK_GHOST_POSY * TILE_SIZE));
 					break;
 				}
+				// Lost
 				else
 				{
 					gameplayMessage->SetText("You lose!");
 					break;
 				}
 			}
+			// Still Time
+			// If ghosts are vulnerable and not dead yet
 			else if ((*ghostIterator)->myIsClaimableFlag && !(*ghostIterator)->myIsDeadFlag)
 			{
+				(*ghostIterator)->myIsClaimableFlag = false;
 				UpdateScore(50);
 				(*ghostIterator)->myIsDeadFlag = true;
-				(*ghostIterator)->Die(myWorld);
+				//(*ghostIterator)->Die(myWorld);
 			}
 		}
 	}
@@ -231,7 +241,7 @@ void Pacman::SetFPS(int fps)
 	stringstream stream;
 	stream << "FPS: ";
 	stream << myFps;
-	SDL_Delay(70);
+	//SDL_Delay(70);
 	fpsDisplay->SetText(stream.str());
 }
 
@@ -274,12 +284,12 @@ void Pacman::MoveAvatar()
 	Vector2f direction = destination - myPosition;
 	Vector2f priorDirection = myPosition - priorPosition;
 
-	if (myWorld->TileIsATunel(currentTileX, currentTileY))
+	if (myWorld->TileIsATunnel(currentTileX, currentTileY))
 	{
 		 // Left  // Right
-		if ((direction.myX < 0 && currentTileX == LEFT_TUNEL_TILEX) || (direction.myX > 0 && currentTileX == RIGHT_TUNEL_TILEX))
+		if ((direction.myX < 0 && currentTileX == LEFT_TUNNEL_TILEX) || (direction.myX > 0 && currentTileX == RIGHT_TUNNEL_TILEX))
 		{
-			nextTileX = (currentTileX == LEFT_TUNEL_TILEX) ? RIGHT_TUNEL_TILEX : LEFT_TUNEL_TILEX;
+			nextTileX = (currentTileX == LEFT_TUNNEL_TILEX) ? RIGHT_TUNNEL_TILEX : LEFT_TUNNEL_TILEX;
 			myAvatar->Respawn(Vector2f(nextTileX * TILE_SIZE, nextTileY * TILE_SIZE));
 		}
 	}

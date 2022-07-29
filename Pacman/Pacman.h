@@ -26,10 +26,6 @@ public:
 	bool Draw();
 
 private:
-	// Tunel Tiles
-	const int RIGHT_TUNEL_TILEX = 25;
-	const int LEFT_TUNEL_TILEX = 0;
-
 	// Font
 	const char* FONT_PATH_FREE_MONO = "freefont-ttf\\sfd\\FreeMono.ttf";
 	const int FONT_SIZE = 24;

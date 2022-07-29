@@ -51,7 +51,7 @@ bool World::InitPathmap()
 			getline (myfile,line);
 			for (unsigned int i = 0; i < line.length(); i++)
 			{
-				PathmapTile* tile = new PathmapTile(i, lineIndex, (line[i] == 'x'), (line[i] == 'b'));
+				PathmapTile* tile = new PathmapTile(i, lineIndex, (line[i] == 'x'), (line[i] == 'b'), (line[i] == '-'));
 				myPathmapTiles.push_back(tile);
 			}
 
@@ -154,20 +154,20 @@ bool World::TileIsValid(int anX, int anY)
 	{
 		PathmapTile* tile = *list_iter;
 
-		if (anX == tile->myX && anY == tile->myY && !tile->myIsBlockingFlag)
+		if (anX == tile->myX && anY == tile->myY && !tile->myIsBlockingFlag && !tile->myaIsBoxWallFlag)
 			return true;
 	}
 
 	return false;
 }
 
-bool World::TileIsATunel(int anX, int anY)
+bool World::TileIsATunnel(int anX, int anY)
 {
 	for (list<PathmapTile*>::iterator list_iter = myPathmapTiles.begin(); list_iter != myPathmapTiles.end(); list_iter++)
 	{
 		PathmapTile* tile = *list_iter;
 
-		if (anX == tile->myX && anY == tile->myY && tile->myIsTunelFlag)
+		if (anX == tile->myX && anY == tile->myY && tile->myIsTunnelFlag)
 			return true;
 	}
 
@@ -217,21 +217,6 @@ bool World::HasIntersectedCherry(const Vector2f& aPosition)
 	return true;
 }
 
-////USE IT FOR THE GHOSTS
-//void World::GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile*>& aList)
-//{
-//	PathmapTile* fromTile = GetTile(aFromX, aFromY);
-//	PathmapTile* toTile = GetTile(aToX, aToY);
-//
-//	for(list<PathmapTile*>::iterator list_iter = myPathmapTiles.begin(); list_iter != myPathmapTiles.end(); list_iter++)
-//	{
-//		PathmapTile* tile = *list_iter;
-//		tile->myIsVisitedFlag = false;
-//	}
-//
-//	Pathfind(fromTile, toTile, aList);
-//}
-
 PathmapTile* World::GetTile(int aFromX, int aFromY)
 {
 	for(list<PathmapTile*>::iterator list_iter = myPathmapTiles.begin(); list_iter != myPathmapTiles.end(); list_iter++)
@@ -260,67 +245,8 @@ bool World::ListDoesNotContain(PathmapTile* aFromTile, list<PathmapTile*>& aList
 	return true;
 }
 
-//bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList)
-//{
-//	aFromTile->myIsVisitedFlag = true;
-//	aList.push_back(aFromTile);
-//
-//	while (aFromTile != aToTile && !aList.empty())
-//	{
-//		PathmapTile* tile = aList.back();
-//		if (!tile->myIsVisitedFlag)
-//		{
-//			tile->myIsVisitedFlag = true;
-//		}
-//		
-//		if (aFromTile != aToTile)
-//			break;
-//
-//		list<PathmapTile*> neighborList;
-//		PathmapTile* up = GetTile(aFromTile->myX, aFromTile->myY - 1);
-//		if (up && !up->myIsVisitedFlag && !up->myIsBlockingFlag) //&& ListDoesNotContain(up, aList))
-//			neighborList.push_front(up);
-//
-//		PathmapTile* left = GetTile(aFromTile->myX - 1, aFromTile->myY);
-//		if (left && !left->myIsVisitedFlag && !left->myIsBlockingFlag) // && ListDoesNotContain(left, aList))
-//			neighborList.push_front(left);
-//
-//		PathmapTile* down = GetTile(aFromTile->myX, aFromTile->myY + 1);
-//		if (down && !down->myIsVisitedFlag && !down->myIsBlockingFlag) //&& ListDoesNotContain(down, aList))
-//			neighborList.push_front(down);
-//
-//		PathmapTile* right = GetTile(aFromTile->myX + 1, aFromTile->myY);
-//		if (right && !right->myIsVisitedFlag && !right->myIsBlockingFlag) //&& ListDoesNotContain(right, aList))
-//			neighborList.push_front(right);
-//
-//		for (std::list<PathmapTile*>::iterator list_iter = neighborList.begin(); list_iter != neighborList.end(); list_iter++)
-//		{
-//			aFromTile = *list_iter;
-//			aList.push_back(tile);
-//		}
-//
-		//if (!neighborList.empty())
-		//{
-		//	aFromTile = neighborList.front();
-		//	aFromTile->myIsVisitedFlag = true;
-		//	aList.push_back(aFromTile);
-		//}
-		//else if (!aList.empty())
-		//{
-		//	aList.pop_back();
-		//	aFromTile = aList.back();
-		//}
-		//else
-		//{
-		//	break;
-		//}
-//	}
-//
-//	return true;
-//}
-
 //USE IT FOR THE GHOSTS
-void World::GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile*>& aList, int priorX, int priorY)
+void World::GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile*>& aList, int priorX, int priorY, GhostBehavior ghostBehavior, GhostType ghostType)
 {
 	PathmapTile* fromTile = GetTile(aFromX, aFromY);
 	PathmapTile* toTile = GetTile(aToX, aToY);
@@ -332,12 +258,27 @@ void World::GetPath(int aFromX, int aFromY, int aToX, int aToY, list<PathmapTile
 		tile->myIsVisitedFlag = false;
 	}
 
-	Pathfind(fromTile, toTile, aList, priorTile);
+	Pathfind(fromTile, toTile, aList, priorTile, ghostBehavior, ghostType);
 }
 
-bool isAValidPosition(PathmapTile* tile, PathmapTile* priorTile)
+bool isInsideTheBox(PathmapTile* tile)
 {
-	return (tile != priorTile && tile && !tile->myIsBlockingFlag);
+	return (tile->myX > MIN_RANGE_TILEX) && (tile->myX < MAX_RANGE_TILEX)
+		&& (tile->myY > MIN_RANGE_TILEY) && (tile->myY < MAX_RANGE_TILEY);
+}
+
+bool isAValidPosition(PathmapTile* fromTile, const PathmapTile* nextTile, PathmapTile* priorTile, GhostBehavior ghostBehavior)
+{
+	if (nextTile)
+	{
+		// The ghost is inside the box
+		if (ghostBehavior == Fear || isInsideTheBox(fromTile))
+			return (nextTile != priorTile && !nextTile->myIsBlockingFlag);
+		else
+			return (nextTile != priorTile && !nextTile->myIsBlockingFlag && !nextTile->myaIsBoxWallFlag);
+	}
+	else
+		return false;
 }
 
 float distanceBtwTiles(const PathmapTile* fromTile, const PathmapTile* toTile)
@@ -348,163 +289,48 @@ float distanceBtwTiles(const PathmapTile* fromTile, const PathmapTile* toTile)
 	return sqrt(dx*dx + dy*dy);
 }
 
-bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList, PathmapTile* priorTile)
+bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList, PathmapTile* priorTile, GhostBehavior ghostBehavior, GhostType ghostType)
 {
-	PathmapTile* upTile = GetTile(aFromTile->myX, aFromTile->myY - 1);
-	PathmapTile* leftTile = GetTile(aFromTile->myX - 1, aFromTile->myY);
-	PathmapTile* downTile = GetTile(aFromTile->myX, aFromTile->myY + 1);
-	PathmapTile* rightTile = GetTile(aFromTile->myX + 1, aFromTile->myY);
+	vector <PathmapTile*> directionTiles;
+	
+	if (aFromTile->myIsTunnelFlag && !priorTile->myIsTunnelFlag)
+	{
+		PathmapTile* tile;
 
-	vector <PathmapTile*> neightbors;
+		// It is going to the right and it is not coming from the Tunnel already
+		if (priorTile->myX < aFromTile->myX)
+			tile = GetTile(LEFT_TUNNEL_TILEX, aFromTile->myY);
+		else
+			tile = GetTile(RIGHT_TUNNEL_TILEX, aFromTile->myY);
 
-	if (isAValidPosition(upTile, priorTile))
-		neightbors.push_back(upTile);
+		aList.push_back(tile);
+		return true;
+	}
 
-	if (isAValidPosition(leftTile, priorTile))
-		neightbors.push_back(leftTile);
+	// Up 
+	directionTiles.push_back(GetTile(aFromTile->myX, aFromTile->myY - 1));
+	// Left
+	directionTiles.push_back(GetTile(aFromTile->myX - 1, aFromTile->myY));
+	// Down
+	directionTiles.push_back(GetTile(aFromTile->myX, aFromTile->myY + 1));
+	// Right
+	directionTiles.push_back(GetTile(aFromTile->myX + 1, aFromTile->myY));
 
-	if (isAValidPosition(downTile, priorTile))
-		neightbors.push_back(downTile);
+	vector <PathmapTile*> neighbors;
 
-	if (isAValidPosition(rightTile, priorTile))
-		neightbors.push_back(rightTile);
+	for (int i=0; i < directionTiles.size(); i++)
+	{
+		PathmapTile* tile = directionTiles[i];
 
-	stable_sort(neightbors.begin(), neightbors.end(), [&](const PathmapTile* lhs, const PathmapTile* rhs){
+		if (isAValidPosition(aFromTile,tile, priorTile, ghostBehavior))
+			neighbors.push_back(tile);
+	}
+
+	stable_sort(neighbors.begin(), neighbors.end(), [&](const PathmapTile* lhs, const PathmapTile* rhs){
 		return distanceBtwTiles(lhs, aToTile) < distanceBtwTiles(rhs, aToTile);
 		});
 
-	aList.push_back(neightbors.at(0));
+	aList.push_back(neighbors.at(0));
 
 	return true;
-// 
-// 	map<Directions, PathmapTile*> arrayOfNeightbors;
-// 	map<Directions, PathmapTile*> bestNeightbors;
-//
-// 	if (isAValidPosition(upTile, priorTile))
-// 		arrayOfNeightbors[UP] = upTile;
-// 
-// 	if (isAValidPosition(leftTile, priorTile))
-// 		arrayOfNeightbors[LEFT] = leftTile;
-// 
-// 	if (isAValidPosition(downTile, priorTile))
-// 		arrayOfNeightbors[DOWN]= downTile;
-// 
-// 	if (isAValidPosition(rightTile, priorTile))
-// 		arrayOfNeightbors[RIGHT] = rightTile;
-// 
-// 	Directions closestTileKey = NONE;
-// 	int minDistance = 1000;
-// 	bestNeightbors = arrayOfNeightbors;
-// 
-// 	// Intersection
-// 	if (arrayOfNeightbors.size()>= 2)
-// 	{
-// 		for (auto const& [key, val] : arrayOfNeightbors)
-// 		{
-// 			int distance = (abs(aToTile->myX - val->myX) + abs(aToTile->myY - val->myY));
-// 			if (minDistance > distance)
-// 			{
-// 				if (arrayOfNeightbors.find(closestTileKey)!= arrayOfNeightbors.end())
-// 					bestNeightbors.erase(closestTileKey);
-// 				closestTileKey = key;
-// 				minDistance = distance;
-// 			}
-// 			else if (minDistance < distance)
-// 			{
-// 				bestNeightbors.erase(key);
-// 			}
-// 		}
-// 		if (bestNeightbors.find(UP) != bestNeightbors.end())
-// 			aList.push_back(bestNeightbors[UP]);
-// 		else if (bestNeightbors.find(LEFT) != bestNeightbors.end())
-// 			aList.push_back(bestNeightbors[LEFT]);
-// 		else if (bestNeightbors.find(DOWN) != bestNeightbors.end())
-// 			aList.push_back(bestNeightbors[DOWN]);
-// 		else if (bestNeightbors.find(RIGHT) != bestNeightbors.end())
-// 			aList.push_back(bestNeightbors[RIGHT]);
-// 	}
-// 	// Keep the same direction
-// 	else
-// 	{
-// 		for (auto const& [key, val] : bestNeightbors)
-// 			aList.push_back(val);
-// 	}
 }
-
-//// IT WORKS
-//bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapTile*>& aList)
-//{
-//	aFromTile->myIsVisitedFlag = true;
-//	aList.push_back(aFromTile);
-//
-//	while (aFromTile != aToTile)
-//	{
-//		list<PathmapTile*> neighborList;
-//		PathmapTile* up = GetTile(aFromTile->myX, aFromTile->myY - 1);
-//		if (up && !up->myIsVisitedFlag && !up->myIsBlockingFlag)
-//			neighborList.push_front(up);
-//
-//		PathmapTile* left = GetTile(aFromTile->myX - 1, aFromTile->myY);
-//		if (left && !left->myIsVisitedFlag && !left->myIsBlockingFlag)
-//			neighborList.push_front(left);
-//
-//		PathmapTile* down = GetTile(aFromTile->myX, aFromTile->myY + 1);
-//		if (down && !down->myIsVisitedFlag && !down->myIsBlockingFlag)
-//			neighborList.push_front(down);
-//
-//		PathmapTile* right = GetTile(aFromTile->myX + 1, aFromTile->myY);
-//		if (right && !right->myIsVisitedFlag && !right->myIsBlockingFlag)
-//			neighborList.push_front(right);
-//
-//		if (!neighborList.empty())
-//		{
-//			aFromTile = neighborList.front();
-//			aFromTile->myIsVisitedFlag = true;
-//			aList.push_back(aFromTile);
-//		}
-//		else if (!aList.empty())
-//		{
-//			aList.pop_back();
-//			aFromTile = aList.back();
-//		}
-//		else
-//		{
-//			break;
-//		}
-//	}
-//
-//	return true;
-//}
-// // ORIGINAL
-
-//bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, std::list<PathmapTile*>& aList)
-//{
-//	aFromTile->myIsVisitedFlag = true;
-//	if (aFromTile->myIsBlockingFlag)
-//		return false;
-//	if (aFromTile == aToTile)
-//		return true;
-//	std::list<PathmapTile*> neighborList;
-//	PathmapTile* up = GetTile(aFromTile->myX, aFromTile->myY - 1);
-//	if (up && !up->myIsVisitedFlag && !up->myIsBlockingFlag && ListDoesNotContain(up, aList))
-//		neighborList.push_front(up);
-//	PathmapTile* down = GetTile(aFromTile->myX, aFromTile->myY + 1);
-//	if (down && !down->myIsVisitedFlag && !down->myIsBlockingFlag && ListDoesNotContain(down, aList))
-//		neighborList.push_front(down);
-//	PathmapTile* right = GetTile(aFromTile->myX + 1, aFromTile->myY);
-//	if (right && !right->myIsVisitedFlag && !right->myIsBlockingFlag && ListDoesNotContain(right, aList))
-//		neighborList.push_front(right);
-//	PathmapTile* left = GetTile(aFromTile->myX - 1, aFromTile->myY);
-//	if (left && !left->myIsVisitedFlag && !left->myIsBlockingFlag && ListDoesNotContain(left, aList))
-//		neighborList.push_front(left);
-//	neighborList.sort(SortFromGhostSpawn);
-//	for (std::list<PathmapTile*>::iterator list_iter = neighborList.begin(); list_iter != neighborList.end(); list_iter++)
-//	{
-//		PathmapTile* tile = *list_iter;
-//		aList.push_back(tile);
-//		if (Pathfind(tile, aToTile, aList))
-//			return true;
-//		aList.pop_back();
-//	}
-//	return false;
-//}

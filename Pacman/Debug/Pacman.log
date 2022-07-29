@@ -1,8 +1,5 @@
-﻿  World.cpp
+﻿  Ghost.cpp
 C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(28,51): warning C4150: deletion of pointer to incomplete type 'Cherry'; no destructor called
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.h(25): message : see declaration of 'Cherry'
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(121,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(121,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(348,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(78,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(80,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Pacman.vcxproj -> C:\Users\rusaf\Documents\Trabajos\Pacman\Debug\Pacman.exe

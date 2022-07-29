@@ -4,12 +4,13 @@
 
 #include "PathmapTile.h"
 
-PathmapTile::PathmapTile(int anX, int anY, bool aIsBlockingFlag, bool aIsTunelFlag)
+PathmapTile::PathmapTile(int anX, int anY, bool aIsBlockingFlag, bool aIsTunnelFlag, bool aIsBoxWallFlag)
 : myX(anX)
 , myY(anY)
 , myIsBlockingFlag(aIsBlockingFlag)
 , myIsVisitedFlag(false)
-, myIsTunelFlag(aIsTunelFlag)
+, myIsTunnelFlag(aIsTunnelFlag)
+, myaIsBoxWallFlag(aIsBoxWallFlag)
 {
 }
 

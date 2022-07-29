@@ -23,21 +23,15 @@ class Avatar;
 class Ghost : public MovableGameEntity
 {
 public:
-	enum GhostBehavior
-	{
-		Wander,
-		Chase,
-		Intercept,
-		Fear,
-	};
-
-	Ghost(const Vector2f& aPosition, Sprite* entitySprite, GhostBehavior behavior);
+	Ghost(const Vector2f& aPosition, Sprite* entitySprite, GhostBehavior behavior, GhostType ghostType);
 	~Ghost(void);
 
 	void Update(float aTime, World* aWorld, Avatar* avatar);
 
 	bool myIsClaimableFlag;
 	bool myIsDeadFlag;
+	bool myIsChaseMode;
+	bool myIsScatterMode;
 
 	void SetImage(string anImage);
 
@@ -45,12 +39,13 @@ public:
 
 protected:
 	void BehaveWander();
-	void BehaveChase(World* aWorld, Avatar* avatar);
-	void BehaveIntercept(World* aWorld, Avatar* avatar);
-	void BehaveFear(World* aWorld, Avatar* avatar);
-	void BehaveVulnerable();
+	void BehaveChase(World* aWorld, int targetX, int targetY, GhostType ghostType);
+	void BehaveIntercept(World* aWorld, int targetX, int targetY, GhostType ghostType);
+	void BehaveFear(World* aWorld, int targetX, int targetY, GhostType ghostType);
+	void BehaveVulnerable(World* aWorld, GhostType ghostType);
 
 	GhostBehavior myBehavior;
+	GhostType myGhostType;
 	int myDesiredMovementX;
 	int myDesiredMovementY;
 

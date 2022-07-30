@@ -1,0 +1,48 @@
+[33mcommit 70c4bbe83cc23d9ff41b1f35ce0559d6215a6618[m[33m ([m[1;36mHEAD -> [m[1;32mmy-own-changes[m[33m)[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Fri Jul 29 23:42:29 2022 -0400
+
+    Scatter and Chase mode works
+    
+    Ghosts delay to go out, work too
+    Sprites animation missing
+
+[33mcommit 8115e98c691ef17173b9070fbcb68ca8c31677c5[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Fri Jul 29 19:50:40 2022 -0400
+
+    ALL GHOSTS WORK WELL
+    
+    fear mode, dead, random, NOT TIMERS FOR SCATTER AND CHASE MODE
+
+[33mcommit e3fa097410ffb61b4c0381425ea876d1b0c59b06[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Fri Jul 29 00:29:44 2022 -0400
+
+    Works: chasing, dead, little house, assets
+    
+    have to fix wandering, pink ghost target
+
+[33mcommit 15319a5bcdc63f6f3b6191fbab5249bedeff4a62[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Wed Jul 27 23:01:32 2022 -0400
+
+    Path Finding works, Ghost Update not
+    
+    need clean comments, do a new ghost update, Pacman works well.
+
+[33mcommit cea54e643bf74f4e231f2b8d12f7a5fc33db6529[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Wed Jul 13 23:32:23 2022 -0400
+
+    testing
+    
+    first change
+
+[33mcommit a6101a781056c241bc203a5ed0a53c4cd6029863[m
+Author: saritadf <sarahdresdenf@gmail.com>
+Date:   Wed Jul 13 23:11:30 2022 -0400
+
+    First Version
+    
+     downloaded from email

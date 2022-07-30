@@ -148,6 +148,7 @@ bool Pacman::Update(float aTime)
 		myAvatar->Update(aTime);
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 		{
+			// Ghosts delay to get out
 			if (myTimeToNextGhost > 0)
 			{
 				if ((*ghostIterator)->GetGhostType() == Red || (*ghostIterator)->GetGhostType() == Pink)
@@ -303,7 +304,6 @@ void Pacman::SetFPS(int fps)
 	stringstream stream;
 	stream << "FPS: ";
 	stream << myFps;
-	//SDL_Delay(70);
 	fpsDisplay->SetText(stream.str());
 }
 

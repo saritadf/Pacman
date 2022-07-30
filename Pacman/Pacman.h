@@ -47,16 +47,15 @@ private:
 
 	float myInitTime;
 	float myTimeToNextUpdate;
+	float myTimeToNextGhost;
 	float myGhostGhostCounter;
 
 	int myLives;
 	int myScore;
 	int myFps;
-	int mySaveTimer;
 	Vector2f redGhostPos;
 
-	const float SCATTER_TIME = 7.f;
-	const float TIMER_FOR_SCATTER_CHASE = 27.f;
+	bool isChaseMode = false;
 	const float WAIT_INIT_TIME = 3.f;
 
 	vector<int> ghostsPosX{ RED_GHOST_POSX, PINK_GHOST_POSX, CYAN_GHOST_POSX, ORANGE_GHOST_POSX };

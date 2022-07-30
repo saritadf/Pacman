@@ -26,6 +26,9 @@ public:
 
 	void Initialize();
 	void Update(float aTime);
+
+private:
+	const int AVATAR_SPEED = 140.0f;
 };
 
 #endif //AVATAR_H

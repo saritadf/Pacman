@@ -32,14 +32,13 @@ public:
 	bool myIsVulnerableFlag;
 	bool myIsDeadFlag;
 	bool myIsChaseMode;
-	bool myIsScatterMode;
 	Vector2f redGhostPos;
 
 	void SetImage(string anImage);
 	GhostType GetGhostType();
 
 protected:
-	void BehaveWander(World* aWorld, Avatar* avatar, GhostType ghostType);
+	void BehaveScatter(World* aWorld, Avatar* avatar, GhostType ghostType);
 	void BehaveChase(World* aWorld, Avatar* avatar, GhostType ghostType);
 	void BehaveIntercept(World* aWorld, int targetX, int targetY, GhostType ghostType);
 	void BehaveFear(World* aWorld, int targetX, int targetY, GhostType ghostType);
@@ -49,6 +48,11 @@ protected:
 	GhostType myGhostType;
 	int myDesiredMovementX;
 	int myDesiredMovementY;
+	float speed;
+
+	const int VULNERABLE_SPEED = 75.f;
+	const int DEAD_SPEED = 170.f;
+	const int REGULAR_SPEED = 140.f;
 
 	list<PathmapTile*> myPath;
 

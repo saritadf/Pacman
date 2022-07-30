@@ -1,8 +1,10 @@
-﻿  Ghost.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(108,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(110,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(293,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(295,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(298,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(300,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+﻿  Pacman.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(53,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(54,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(55,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(253,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(253,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Pacman.vcxproj -> C:\Users\rusaf\Documents\Trabajos\Pacman\Debug\Pacman.exe

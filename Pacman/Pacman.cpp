@@ -26,7 +26,8 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 
 Pacman::Pacman(Drawer* aDrawer)
 : myDrawer(aDrawer)
-, myTimeToNextUpdate(0.f)
+, myTimeToNextUpdate(40.f)
+, myTimeToNextGhost(40.f)
 , myInitTime(3.f)
 , myNextMovement(-1.f,0.f)
 , myScore(0)
@@ -80,7 +81,6 @@ Pacman::Pacman(Drawer* aDrawer)
 	newSprite = Sprite::Create(assetPaths, myDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
 	ghosts.push_back(new Ghost(Vector2f(ORANGE_GHOST_POSX * TILE_SIZE, ORANGE_GHOST_POSY * TILE_SIZE), newSprite, GhostBehavior::Intercept, GhostType::Orange));
 
-
 	myWorld = new World();
 
 	gameplayMessage = SpriteFont::Create(FONT_PATH_FREE_MONO, "", WHITE, FONT_SIZE, myDrawer);
@@ -128,7 +128,8 @@ bool Pacman::Init()
 bool Pacman::Update(float aTime)
 {
 	myInitTime -= aTime;
-	//myTimeToNextUpdate -= aTime;
+	myTimeToNextUpdate -= aTime;
+	myTimeToNextGhost -= aTime;
 
 	// Waiting to Initialize
 	if (myInitTime < 0.f)
@@ -147,28 +148,24 @@ bool Pacman::Update(float aTime)
 		myAvatar->Update(aTime);
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 		{
-			//if (myTimeToNextUpdate > 0)
-			//{
-			//	if (myTimeToNextUpdate (*ghostIterator)->GetGhostType() == Red)
-			//	{
-			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+			if (myTimeToNextGhost > 0)
+			{
+				if ((*ghostIterator)->GetGhostType() == Red || (*ghostIterator)->GetGhostType() == Pink)
+				{
+					(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+				}
 
-			//	}
-			//	else if ((*ghostIterator)->GetGhostType() == Pink)
-			//	{
-			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
-			//	}
-			//	else if ((*ghostIterator)->GetGhostType() == Orange)
-			//	{
-			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
-			//	}
-			//	else if ((*ghostIterator)->GetGhostType() == Cyan)
-			//	{
-			//		(*ghostIterator)->Update(aTime, myWorld, myAvatar);
-			//	}
-			//}
-			//else
-			//{
+				if (myTimeToNextGhost < 15 && (*ghostIterator)->GetGhostType() == Orange)
+				{
+					(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+				}
+				else if (myTimeToNextGhost < 30 && (*ghostIterator)->GetGhostType() == Cyan)
+				{
+					(*ghostIterator)->Update(aTime, myWorld, myAvatar);
+				}
+			}
+			else
+			{
 				if ((*ghostIterator)->GetGhostType() == Red)
 				{
 					redGhostPos = (*ghostIterator)->GetPosition();
@@ -179,7 +176,7 @@ bool Pacman::Update(float aTime)
 				}
 
 				(*ghostIterator)->Update(aTime, myWorld, myAvatar);
-			//}
+			}
 		}
 
 		if (myWorld->HasIntersectedDot(myAvatar->GetPosition()))
@@ -195,9 +192,7 @@ bool Pacman::Update(float aTime)
 		{
 			UpdateScore(20);
 
-			mySaveTimer = myTimeToNextUpdate;
-
-			myGhostGhostCounter = 20.f;
+			myGhostGhostCounter = 10.f;
 			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 			{
 				(*ghostIterator)->myIsVulnerableFlag = true;
@@ -212,35 +207,28 @@ bool Pacman::Update(float aTime)
 		// Vulnerable Mode is over
 		if (myGhostGhostCounter <= 0.f)
 		{
-			myTimeToNextUpdate = mySaveTimer;
 			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
-			{
 				(*ghostIterator)->myIsVulnerableFlag = false;
-				(*ghostIterator)->myIsChaseMode = true;
-			}
 		}
 
-		myTimeToNextUpdate -= aTime;
+		// Chase Mode 
+		if (myTimeToNextUpdate > 0.f  && myTimeToNextUpdate < 33.f )
+		{
+			isChaseMode = true;
+			
+			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+				(*ghostIterator)->myIsChaseMode = true;
 
-		//// Chase Mode 
-		//if (myTimeToNextUpdate <= 0.f)
-		//{
-		//	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
-		//	{
-		//		(*ghostIterator)->myIsScatterMode = false;
-		//		(*ghostIterator)->myIsChaseMode = true;
-		//	}
-		//	myTimeToNextUpdate = TIMER_FOR_SCATTER_CHASE;
-		//}
-		////Scatter Mode
-		//if (myTimeToNextUpdate > 0 && myTimeToNextUpdate <= 20.f)
-		//{
-		//	for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
-		//	{
-		//		(*ghostIterator)->myIsScatterMode = true;
-		//		(*ghostIterator)->myIsChaseMode = false;
-		//	}
-		//}
+		}
+		//Scatter Mode
+		if (myTimeToNextUpdate < 0.f)
+		{
+			isChaseMode = false;
+			myTimeToNextUpdate = 40.f;
+
+			for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
+				(*ghostIterator)->myIsChaseMode = false;
+		}
 
 		for (ghostIterator = ghosts.begin(); ghostIterator != ghosts.end(); ghostIterator++)
 		{
@@ -255,6 +243,7 @@ bool Pacman::Update(float aTime)
 					// Lose one life
 					if (myLives > 0)
 					{
+						myTimeToNextGhost = 40.f;
 						myInitTime = WAIT_INIT_TIME;
 						myAvatar->Respawn(Vector2f(INIT_AVATAR_POSX * TILE_SIZE, INIT_AVATAR_POSY * TILE_SIZE));
 						myAvatar->Initialize();

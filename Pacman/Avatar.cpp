@@ -43,7 +43,7 @@ void Avatar::Update(float aTime)
 		sprite->SetFrame(ASSET_PATH_UP_AVATAR);
 	}
 
-	float distanceToMove = aTime * 100.0f;
+	float distanceToMove = aTime * AVATAR_SPEED;
 
 	if (distanceToMove > direction.Length())
 	{

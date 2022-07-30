@@ -339,6 +339,7 @@ bool World::Pathfind(PathmapTile* aFromTile, PathmapTile* aToTile, list<PathmapT
 			});
 	}
 
+	if (!neighbors.empty())
 	aList.push_back(neighbors.at(0));
 
 	return true;

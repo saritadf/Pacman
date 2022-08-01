@@ -70,6 +70,9 @@
     <ClCompile Include="SpriteFont.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Lives.cpp">
+      <Filter>Game\Game entities\Static</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pacman.h">
@@ -119,6 +122,9 @@
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Lives.h">
+      <Filter>Game\Game entities\Static</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

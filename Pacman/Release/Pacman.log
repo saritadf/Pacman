@@ -1,68 +1,227 @@
 ﻿  Avatar.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
   BigDot.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
   Cherry.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
   Dot.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
   Drawer.cpp
   GameEntity.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Ghost.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(53,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(54,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(55,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(72,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(80,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(103,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(105,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(115,13): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(286,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(288,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(291,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(293,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
   MovableGameEntity.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
 C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(38,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(39,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Pacman.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(53,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(54,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(55,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(254,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(254,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   PathmapTile.cpp
   Sprite.cpp
   SpriteFont.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
   StaticGameEntity.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Vector2f.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   World.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(26,51): warning C4150: deletion of pointer to incomplete type 'Cherry'; no destructor called
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.h(21): message : see declaration of 'Cherry'
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(119,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(119,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
-Ghost.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
-Pacman.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_DEAD" (?ASSET_PATH_GHOST_DEAD@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_ORANGE_GHOST" (?ASSET_PATH_ORANGE_GHOST@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_CYAN_GHOST" (?ASSET_PATH_CYAN_GHOST@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_UP_AVATAR" (?ASSET_PATH_UP_AVATAR@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_RIGHT_AVATAR" (?ASSET_PATH_RIGHT_AVATAR@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_DOWN_AVATAR" (?ASSET_PATH_DOWN_AVATAR@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_RED_GHOST" (?ASSET_PATH_RED_GHOST@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_LEFT_AVATAR" (?ASSET_PATH_LEFT_AVATAR@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_PINK_GHOST" (?ASSET_PATH_PINK_GHOST@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_SMALL_DOT" (?ASSET_PATH_SMALL_DOT@@3PBDB) already defined in Avatar.obj
-World.obj : error LNK2005: "char const * const ASSET_PATH_GHOST_VULNERABLE" (?ASSET_PATH_GHOST_VULNERABLE@@3PBDB) already defined in Avatar.obj
-C:\Users\rusaf\Documents\Trabajos\Pacman\Release\Pacman.exe : fatal error LNK1169: one or more multiply defined symbols found
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(29,51): warning C4150: deletion of pointer to incomplete type 'Cherry'; no destructor called
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.h(25): message : see declaration of 'Cherry'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(122,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(122,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(288,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\World.cpp(320,20): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(26,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(27,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(28,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(29,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(32,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(33,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(34,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(35,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(37,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(38,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(41,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(42,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(45,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(48,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(51,31): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(54,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(55,29): error C7525: inline variables require at least '/std:c++17'
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Constants.h(58,29): error C7525: inline variables require at least '/std:c++17'

@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "Ghost.h"
 #include "World.h"
 #include "PathmapTile.h"
@@ -13,10 +9,22 @@ Ghost::Ghost(const Vector2f& aPosition, Sprite* entitySprite, GhostBehavior beha
 	myBehavior(behavior),
 	myGhostType(ghostType)
 {
-	sprite->SetFrame(ASSET_PATH_RED_GHOST);
-	sprite->SetFrame(ASSET_PATH_PINK_GHOST);
-	sprite->SetFrame(ASSET_PATH_ORANGE_GHOST);
-	sprite->SetFrame(ASSET_PATH_CYAN_GHOST);
+	if (myGhostType == Red)
+	{
+		sprite->SetFrame(ASSET_PATH_RED_GHOST);
+	}
+	else if (myGhostType == Pink)
+	{
+		sprite->SetFrame(ASSET_PATH_PINK_GHOST);
+	}
+	else if (myGhostType == Orange)
+	{
+		sprite->SetFrame(ASSET_PATH_ORANGE_GHOST);
+	}
+	else if (myGhostType == Cyan)
+	{
+		sprite->SetFrame(ASSET_PATH_CYAN_GHOST);
+	}
 
 	myIsVulnerableFlag = false;
 	myIsDeadFlag = false;
@@ -43,6 +51,7 @@ void CheckLimitValues(int& targetX, int& targetY)
 	targetY = targetY > 28 ? 28 : targetY;
 	targetY = targetY < 0 ? 0 : targetY;
 }
+
 void Ghost::SetRedGhostPosition(Vector2f posX)
 {
 	redGhostPos.myX = posX.myX /TILE_SIZE;
@@ -53,10 +62,22 @@ void Ghost::Update(float aTime, World* aWorld, Avatar* avatar)
 {
 	if (!myIsDeadFlag && !myIsVulnerableFlag)
 	{
-		sprite->SetFrame(ASSET_PATH_RED_GHOST);
+		if (myGhostType == Red)
+		{
+			sprite->SetFrame(ASSET_PATH_RED_GHOST);
+		}
+		else if (myGhostType == Pink)
+		{
 		sprite->SetFrame(ASSET_PATH_PINK_GHOST);
+		}
+		else if (myGhostType == Orange)
+		{
 		sprite->SetFrame(ASSET_PATH_ORANGE_GHOST);
-		sprite->SetFrame(ASSET_PATH_CYAN_GHOST);
+		}
+		else if (myGhostType == Cyan)
+		{
+			sprite->SetFrame(ASSET_PATH_CYAN_GHOST);
+		}
 
 		if (myIsChaseMode)
 		{
@@ -70,11 +91,14 @@ void Ghost::Update(float aTime, World* aWorld, Avatar* avatar)
 	if (myIsDeadFlag)
 	{
 		speed = DEAD_SPEED;
+
 		sprite->SetFrame(ASSET_PATH_GHOST_DEAD);
 		sprite->SetFrame(ASSET_PATH_GHOST_DEAD);
 		sprite->SetFrame(ASSET_PATH_GHOST_DEAD);
 		sprite->SetFrame(ASSET_PATH_GHOST_DEAD);
+
 		myBehavior = Fear;
+		myIsVulnerableFlag = false;
 	}
 	else if (!myIsVulnerableFlag)
 		speed = REGULAR_SPEED;
@@ -83,7 +107,24 @@ void Ghost::Update(float aTime, World* aWorld, Avatar* avatar)
 	if (isInsideTheBox(myCurrentTileX, myCurrentTileY))
 	{
 		myBehavior = Intercept;
-		sprite->SetFrame(ASSET_PATH_RED_GHOST);
+
+		if (myGhostType == Red)
+		{
+			sprite->SetFrame(ASSET_PATH_RED_GHOST);
+		}
+		else if (myGhostType == Pink)
+		{
+			sprite->SetFrame(ASSET_PATH_PINK_GHOST);
+		}
+		else if (myGhostType == Orange)
+		{
+			sprite->SetFrame(ASSET_PATH_ORANGE_GHOST);
+		}
+		else if (myGhostType == Cyan)
+		{
+			sprite->SetFrame(ASSET_PATH_CYAN_GHOST);
+		}
+
 		myIsDeadFlag = false;
 		myIsVulnerableFlag = false;
 	}

@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "Avatar.h"
 
 Avatar::Avatar(const Vector2f& aPosition, Sprite* entitySprite)

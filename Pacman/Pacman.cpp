@@ -26,6 +26,7 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 
 Pacman::Pacman(Drawer* aDrawer)
 : myDrawer(aDrawer)
+, myCherryTimer(10.f)
 , myTimeToNextUpdate(40.f)
 , myTimeToNextGhost(40.f)
 , myInitTime(3.f)
@@ -200,9 +201,20 @@ bool Pacman::Update(float aTime)
 			}
 		}
 
-		if (myWorld->HasIntersectedCherry(myAvatar->GetPosition()))
+		if (CheckDotsForCherry())
+			foundACherry = true;
+
+		if (foundACherry)
+			myCherryTimer -= aTime;
+
+		if (myCherryTimer < 0 || (myWorld->HasIntersectedCherry(myAvatar->GetPosition())))
 		{
-			//UpdateScore(100);
+			myCherryTimer = 10.f;
+			foundACherry = false;
+			if (myWorld->HasIntersectedCherry(myAvatar->GetPosition()))
+				UpdateScore(100);
+			else
+			myWorld->ClearCherry();
 		}
 
 		// Vulnerable Mode is over
@@ -237,13 +249,17 @@ bool Pacman::Update(float aTime)
 			if (((*ghostIterator)->GetPosition() - myAvatar->GetPosition()).Length() < 16.f)
 			{
 				// Vulnerable timer is up
-				if (myGhostGhostCounter <= 0.f)
+				if (myGhostGhostCounter <= 0.f || (!(*ghostIterator)->myIsDeadFlag && !(*ghostIterator)->myIsVulnerableFlag))
 				{
 					UpdateLives(myLives - 1);
 
 					// Lose one life
 					if (myLives > 0)
 					{
+						foundACherry = false;
+						myWorld->ClearCherry();
+						myCherryTimer = 10.f;
+
 						myTimeToNextGhost = 40.f;
 						myInitTime = WAIT_INIT_TIME;
 						myAvatar->Respawn(Vector2f(INIT_AVATAR_POSX * TILE_SIZE, INIT_AVATAR_POSY * TILE_SIZE));
@@ -291,11 +307,8 @@ void Pacman::UpdateScore(int scoreGain)
 
 void Pacman::UpdateLives(int lives)
 {
+	myWorld->LostALife();
 	myLives = lives;
-	stringstream stream;
-	stream << "Lives: ";
-	stream << myLives;
-	livesDisplay->SetText(stream.str());
 }
 
 void Pacman::SetFPS(int fps)
@@ -399,6 +412,18 @@ void Pacman::MoveAvatar()
 				myAvatar->SetNextTile(currentTileX, currentTileY);
 		}
 	}
+}
+
+bool Pacman::CheckDotsForCherry()
+{
+	int dots = myWorld->GetDotCount();
+
+	if (myWorld->GetDotCount() ==  176 || myWorld->GetDotCount() ==76)
+	{
+		myWorld->InitCherry(myDrawer);
+		return true;
+	}
+	return false;
 }
 
 bool Pacman::CheckEndGameCondition()

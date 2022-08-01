@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "Cherry.h"
 
 Cherry::Cherry(Vector2f aPosition, Sprite* entitySprite)

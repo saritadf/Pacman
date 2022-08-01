@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "Dot.h"
 
 Dot::Dot(Vector2f aPosition, Sprite* entitySprite)

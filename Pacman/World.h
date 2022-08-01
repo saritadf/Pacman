@@ -1,14 +1,6 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#ifdef _DEBUG
-#define MYDEBUG_NEW new( _NORMAL_BLOCK, __FILE__, __LINE__)
-// Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
-//allocations to be of _CLIENT_BLOCK type
-#else
-#define MYDEBUG_NEW
-#endif
-
 #include <list>
 #include <map>
 #include "Vector2f.h"
@@ -23,6 +15,7 @@ class PathmapTile;
 class Dot;
 class BigDot;
 class Cherry;
+class Lives;
 
 class World
 {
@@ -31,14 +24,17 @@ public:
 	~World(void);
 
 	void Init(Drawer* gameDrawer);
+	bool InitCherry(Drawer* gameDrawer);
 
 	void Draw(Drawer* aDrawer);
 	bool TileIsValid(int anX, int anY);
 	bool TileIsATunnel(int anX, int anY);
 
+	void LostALife();
 	bool HasIntersectedDot(const Vector2f& aPosition);
 	bool HasIntersectedBigDot(const Vector2f& aPosition);
 	bool HasIntersectedCherry(const Vector2f& aPosition);
+	void ClearCherry();
 	int GetDotCount();
 
 	void Update();
@@ -62,11 +58,13 @@ private:
 	bool InitPathmap();
 	bool InitDots(Drawer* gameDrawer);
 	bool InitBigDots(Drawer* gameDrawer);
+	bool InitLives(Drawer* gameDrawer);
 
 	list<PathmapTile*> myPathmapTiles;
 	list<Dot*> myDots;
 	list<BigDot*> myBigDots;
 	list<Cherry*> myCherry;
+	list<Lives*> myLives;
 
 	Sprite* boardBackground;
 };

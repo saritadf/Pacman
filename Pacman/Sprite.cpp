@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "Sprite.h"
 #include "Drawer.h"
 #include "SDL_image.h"

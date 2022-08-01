@@ -14,7 +14,7 @@ xxxxx.xx x      x xx.xxxxx
 b    .   x      x   .    b   
 xxxxx.xx x      x xx.xxxxx
 xxxxx.xx xxxxxxxx xx.xxxxx
-xxxxx.xx          xx.xxxxx
+xxxxx.xx    c     xx.xxxxx
 xxxxx.xx xxxxxxxx xx.xxxxx
 xxxxx.xx xxxxxxxx xx.xxxxx
 ............xx............

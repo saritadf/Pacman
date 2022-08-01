@@ -126,6 +126,7 @@
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="Lives.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovableGameEntity.cpp" />
     <ClCompile Include="Pacman.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Lives.h" />
     <ClInclude Include="MovableGameEntity.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="PathmapTile.h" />

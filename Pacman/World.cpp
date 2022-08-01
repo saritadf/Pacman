@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "World.h"
 #include <iostream>
 #include <sstream>
@@ -13,6 +9,8 @@
 
 #include "PathmapTile.h"
 #include "Dot.h"
+#include "Cherry.h"
+#include "Lives.h"
 #include "BigDot.h"
 #include "Drawer.h"
 #include "Avatar.h"
@@ -27,6 +25,7 @@ World::~World(void)
 	while (!myBigDots.empty()) delete myBigDots.front(), myBigDots.pop_front();
 	while (!myDots.empty()) delete myDots.front(), myDots.pop_front();
 	while (!myCherry.empty()) delete myCherry.front(), myCherry.pop_front();
+	while (!myLives.empty()) delete myLives.front(), myLives.pop_front();
 }
 
 void World::Init(Drawer* gameDrawer)
@@ -38,6 +37,7 @@ void World::Init(Drawer* gameDrawer)
 	InitPathmap();
 	InitDots(gameDrawer);
 	InitBigDots(gameDrawer);
+	InitLives(gameDrawer);
 }
 
 bool World::InitPathmap()
@@ -59,6 +59,25 @@ bool World::InitPathmap()
 			lineIndex++;
 		}
 		myfile.close();
+	}
+
+	return true;
+}
+
+bool World::InitLives(Drawer* gameDrawer)
+{
+	Sprite* newSprite = NULL;
+	list<string> assetPaths;
+	
+	float lineIndex = 30.5f;
+
+	for (unsigned int i = 0; i < 3; i++)
+	{
+		assetPaths.clear();
+		assetPaths.push_back(ASSET_PATH_LIVES_AVATAR);
+		newSprite = Sprite::Create(assetPaths, gameDrawer, SPRITE_SIZEX-5, SPRITE_SIZEY-5);
+		Lives* lives = new Lives(Vector2f(float(i * TILE_SIZE), float(lineIndex * TILE_SIZE)), newSprite);
+		myLives.push_back(lives);
 	}
 
 	return true;
@@ -93,6 +112,44 @@ bool World::InitDots(Drawer* gameDrawer)
 			lineIndex++;
 		}
 		myfile.close();
+	}
+
+	return true;
+}
+
+bool World::InitCherry(Drawer* gameDrawer)
+{
+	if (myCherry.empty())
+	{
+		Sprite* newSprite = NULL;
+		list<string> assetPaths;
+
+		string line;
+		ifstream myfile("map.txt");
+
+		if (myfile.is_open())
+		{
+			int lineIndex = 0;
+			while (!myfile.eof())
+			{
+				getline(myfile, line);
+				for (unsigned int i = 0; i < line.length(); i++)
+				{
+					if (line[i] == 'c')
+					{
+						assetPaths.clear();
+						assetPaths.push_back(ASSET_PATH_CHERRY);
+						newSprite = Sprite::Create(assetPaths, gameDrawer, SPRITE_SIZEX, SPRITE_SIZEY);
+						Cherry* cherry = new Cherry(Vector2f(i * TILE_SIZE, lineIndex * TILE_SIZE), newSprite);
+						myCherry.push_back(cherry);
+						break;
+					}
+				}
+
+				lineIndex++;
+			}
+			myfile.close();
+		}
 	}
 
 	return true;
@@ -147,6 +204,18 @@ void World::Draw(Drawer* aDrawer)
 		BigDot* dot = *list_iter;
 		dot->Draw(aDrawer);
 	}
+	
+	for(list<Lives*>::iterator list_iter = myLives.begin(); list_iter != myLives.end(); list_iter++)
+	{
+		Lives* lives = *list_iter;
+		lives->Draw(aDrawer);
+	}
+
+	if(!myCherry.empty())
+	{
+		Cherry* cherry = myCherry.front();
+		cherry->Draw(aDrawer);
+	}
 }
 
 bool World::TileIsValid(int anX, int anY)
@@ -178,6 +247,16 @@ bool World::TileIsATunnel(int anX, int anY)
 int World::GetDotCount()
 {
 	return myDots.size() + myBigDots.size();
+}
+
+void World::LostALife()
+{
+	if (!myLives.empty())
+	{
+		Lives* lives = myLives.front();
+		myLives.remove(lives);
+		delete lives;
+	}
 }
 
 bool World::HasIntersectedDot(const Vector2f& aPosition)
@@ -214,7 +293,28 @@ bool World::HasIntersectedBigDot(const Vector2f& aPosition)
 
 bool World::HasIntersectedCherry(const Vector2f& aPosition)
 {
-	return true;
+	if (!myCherry.empty())
+	{
+		Cherry* cherry = myCherry.front();
+
+		if ((cherry->GetPosition() - aPosition).Length() < 5.f)
+		{
+			ClearCherry();
+			return true;
+		}
+	}
+
+	return false;
+}
+
+void World::ClearCherry()
+{
+	if (!myCherry.empty())
+	{
+		Cherry* cherry = myCherry.front();
+		myCherry.remove(cherry);
+		delete cherry;
+	}
 }
 
 PathmapTile* World::GetTile(int aFromX, int aFromY)

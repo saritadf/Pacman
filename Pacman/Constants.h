@@ -22,6 +22,9 @@ namespace constants
 		All
 	};
 
+	// Lives Path
+	inline constexpr const char* ASSET_PATH_LIVES_AVATAR = "Lives_25.png";
+
 	//Avatar Paths
 	inline constexpr const char* ASSET_PATH_RIGHT_AVATAR = "open_right_32.png";
 	inline constexpr const char* ASSET_PATH_DOWN_AVATAR = "open_down_32.png";
@@ -48,7 +51,7 @@ namespace constants
 	inline constexpr const char* ASSET_PATH_SMALL_DOT = "Small_Dot_32.png";
 
 	// Cherry
-	inline constexpr const char* ASSET_PATH_CHERRY = "cherry.png";
+	inline constexpr const char* ASSET_PATH_CHERRY = "Cherry_32.png";
 
 	// Sprite Size
 	inline constexpr const int SPRITE_SIZEX = 32;

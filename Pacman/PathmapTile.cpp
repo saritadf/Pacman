@@ -1,7 +1,3 @@
-#ifdef _DEBUG
-#define new MYDEBUG_NEW
-#endif
-
 #include "PathmapTile.h"
 
 PathmapTile::PathmapTile(int anX, int anY, bool aIsBlockingFlag, bool aIsTunnelFlag, bool aIsBoxWallFlag)

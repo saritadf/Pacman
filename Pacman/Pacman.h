@@ -38,6 +38,7 @@ private:
 	bool UpdateInput();
 	void MoveAvatar();
 	bool CheckEndGameCondition();
+	bool CheckDotsForCherry();
 
 	void UpdateScore(int scoreGain);
 	void UpdateLives(int lives);
@@ -49,12 +50,14 @@ private:
 	float myTimeToNextUpdate;
 	float myTimeToNextGhost;
 	float myGhostGhostCounter;
+	float myCherryTimer;
 
 	int myLives;
 	int myScore;
 	int myFps;
 	Vector2f redGhostPos;
 
+	bool foundACherry = false;
 	bool isChaseMode = false;
 	const float WAIT_INIT_TIME = 3.f;
 

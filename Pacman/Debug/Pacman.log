@@ -1,25 +1,19 @@
 ﻿  Ghost.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(53,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(54,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(55,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(72,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(80,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(103,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(105,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(115,13): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(286,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(288,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(291,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(293,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
-  Pacman.cpp
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(31,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(53,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(54,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(55,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(254,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(254,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Pacman.cpp(355,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(45,31): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(46,25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.h(47,28): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Avatar.h(23,27): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(93,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(104,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(144,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(146,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(156,13): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(327,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(329,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(332,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\Ghost.cpp(334,52): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+  MovableGameEntity.cpp
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(39,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\rusaf\Documents\Trabajos\Pacman\Pacman\MovableGameEntity.cpp(40,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Generating Code...
   Pacman.vcxproj -> C:\Users\rusaf\Documents\Trabajos\Pacman\Debug\Pacman.exe
